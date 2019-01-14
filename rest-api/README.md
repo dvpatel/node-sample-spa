@@ -1,10 +1,8 @@
 ## Description
 
+```bash
 REST-API based on Nest.
 
-##  Examples
-
-```bash
 The sample application supports REST operations for 2 sample APIs:  StockResearch and Watchlist.  For Watchlist, the application supports all CRUD operations using 'dummy' data and service.
 
 StockResearch:
@@ -29,7 +27,6 @@ Sample JSON Payload:
 Lastly to delete a watchlist in the watchlist, use the DELETE method to the same end-point, http://localhost:3000/watchlist/<watchlist_id>.  To delete a specific stock, include querty parameter, stockId.
 
 
-$ npm install
 ```
 
 
