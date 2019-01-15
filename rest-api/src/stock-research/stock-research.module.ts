@@ -9,7 +9,7 @@ import { StockResearchService } from './stock-research.service';
  */
 @Module({
     imports: [
-        HttpModule.register({ timeout: 1000, maxRedirects: 1 }),
+        HttpModule.register({ timeout: 2000, maxRedirects: 1 }),
         ConfigModule],
     controllers: [
         StockResearchController],
