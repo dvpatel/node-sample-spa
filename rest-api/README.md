@@ -92,6 +92,11 @@ $ npm run start:hmr
 $ npm run start:prod
 ```
 
+## Accessing Service
+```bash
+Use Chrome for GET operations.  For remaining, use utilities such as curl.
+```
+
 ## Test
 
 ```bash
