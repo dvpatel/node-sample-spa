@@ -1,7 +1,7 @@
 import { Injectable, HttpService, Logger } from '@nestjs/common';
 
-import { map, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map, mergeMap, toArray, tap } from 'rxjs/operators';
+import { Observable, from, throwError } from 'rxjs';
 
 import { ConfigService } from '../config/config.service';
 import { Financials } from './financial.model';
@@ -32,12 +32,31 @@ export class StockResearchService {
    * @param annual Set to true for annualized financials.  Default is quarterly
    * @returns RxJS Observable compatible response object
    */
-  getFinancials(stockSymbol: string, annual: boolean = false): Observable<Financials> {
+  private getFinancialsForStock(stockSymbol: string, annual: boolean = false): Observable<Financials> {
     return this.http.get<Financials>(this.buildProviderUrl(stockSymbol, annual))
       .pipe(
         map(response => response.data),
         tap(response => this.logger.log('Received financials for:  ' + response.symbol)),
       );
+  }
+
+  /**
+   * Get multiple financials for array of symbols
+   * @param stockSymbols
+   * @param annual
+   */
+  getFinancials(stockSymbols: string[], annual: boolean = false): Observable<Financials[]> {
+
+    //  limit to 5 so as not to overwhelm service provider ;
+    if (stockSymbols.length > 20) {
+      return throwError('limit exceeded.') ;
+    }
+
+    return from(stockSymbols)
+    .pipe(
+      mergeMap((symbol: string) => this.getFinancialsForStock(symbol.trim(), annual)),
+      toArray(),
+    ) ;
   }
 
   /**

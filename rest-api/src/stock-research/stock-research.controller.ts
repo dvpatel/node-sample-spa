@@ -20,20 +20,20 @@ export class StockResearchController {
 
   /**
    * Returns Financials payload after data validation.
-   * @param symbol stock symbol
+   * @param symbol stock symbols, comma separated
    * @param annual annualized or quarterly.  Default is quarterly
    */
-  @Get(':symbol')
-  @UsePipes(new SymbolValidationPipe(), new QueryValidationPipe())
+  @Get()
+  @UsePipes(new SymbolValidationPipe())
   getFinancials(
-    @Param('symbol') symbol: string,
+    @Query('symbols') symbols: string,
     @Query('annual') annual: boolean = false,
     @Res() response) {
 
     /**
      * Service resturns RXJS Observable<Financials> object.
      */
-    this.service.getFinancials(symbol, annual)
+    this.service.getFinancials(symbols.split(','), annual)
       .subscribe(result => {
         response.status(HttpStatus.OK).send(result);
       }, error => {

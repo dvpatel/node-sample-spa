@@ -15,8 +15,8 @@ export class SymbolValidationPipe implements PipeTransform<string, string> {
      */
     transform(value: string, metadata: ArgumentMetadata): string {
 
-        const regex = /^[a-zA-Z0-9.]{0,5}$/;
-        if (value && metadata.type === 'param' && !regex.test(value)) {
+        const regex = /^[a-zA-Z0-9.,]{0,100}$/;
+        if (value && metadata.type === 'query' && !regex.test(value)) {
             this.logger.log('Validation failed:  ' + value) ;
             throw new BadRequestException('Bad input.') ;
         }
