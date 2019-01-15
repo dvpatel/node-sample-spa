@@ -14,9 +14,10 @@ and structural paradigms as AngularJS.  For full-stack developers who are coding
 both the front-end and the back-end, the common coding and structural paradigms 
 would help accelerate the learning curve.  Furthermore, since both the client and
 server is based on TypeScript, there is the option of reusing some of the data 
-model, ie the objects that represents Watchlist and Financials, between the front-end 
+models, ie. the objects that represents Watchlist and Financials, between the front-end 
 and back-end.  To demonstrate complete independence between front-end and back-end, 
-this sample does not do this.
+this sample application does not do this.
+
 ```
 
 ## Description
