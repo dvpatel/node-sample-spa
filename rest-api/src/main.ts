@@ -6,9 +6,11 @@ import { AuthenticationGuard} from './util/authentication.guard' ;
  * Bootstrapper
  */
 async function bootstrap() {
+
+  //  Log all messages to console.
   const app = await NestFactory.create(AppModule, { logger: console });
 
-  //  Authentication check. Point is you can put your real logic here to fully proect ALL APIs
+  //  Authentication check. Point is you can put your real logic here to fully protect ALL APIs
   app.useGlobalGuards(new AuthenticationGuard());
 
   //  Enable CORS for x-domain, secure access
