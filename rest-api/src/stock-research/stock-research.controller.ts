@@ -21,19 +21,20 @@ export class StockResearchController {
   /**
    * Returns Financials payload after data validation.
    * @param symbol stock symbols, comma separated
-   * @param annual annualized or quarterly.  Default is quarterly
+   * @param timePeriod annual or quarterly financials.  Default is quarterly
    */
-  @Get()
+  @Get(':timePeriod')
   @UsePipes(new SymbolValidationPipe())
   getFinancials(
     @Query('symbols') symbols: string,
-    @Query('annual') annual: boolean = false,
+    @Param('timePeriod') timePeriod: string,
     @Res() response) {
 
     /**
      * Service resturns RXJS Observable<Financials> object.
      */
-    this.service.getFinancials(symbols.split(','), annual)
+    const isAnnual: boolean = (timePeriod === 'annual') ? true : false ;
+    this.service.getFinancials(symbols.split(','), isAnnual)
       .subscribe(result => {
         response.status(HttpStatus.OK).send(result);
       }, error => {

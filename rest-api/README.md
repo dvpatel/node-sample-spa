@@ -43,9 +43,13 @@ to HTTP POST, GET, PUT and DELETE methods.
 StockResearch Service:
 
 The StockResearch service provides quarterly and annual financials for 
-list of stocks.  To retrieve quarterly financials in JSON format, access the 
-URL http://localhost:3000/financials?symbols=goog,fb,xom.  To retrieve annualized 
-financials, access the same URL with the QueryParam 'annual=true'.
+list of stocks.
+
+Annual Financials:
+http://localhost:3000/financials/annual?symbols=goog,fb,xom
+
+Quarterly Financials:
+http://localhost:3000/financials/quarterly?symbols=goog,fb,xom
 
 ```
 

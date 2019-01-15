@@ -32,7 +32,7 @@ export class StockResearchService {
    * @param annual Set to true for annualized financials.  Default is quarterly
    * @returns RxJS Observable compatible response object
    */
-  private getFinancialsForStock(stockSymbol: string, annual: boolean = false): Observable<Financials> {
+  private getFinancialsPerStock(stockSymbol: string, annual: boolean = false): Observable<Financials> {
     return this.http.get<Financials>(this.buildProviderUrl(stockSymbol, annual))
       .pipe(
         map(response => response.data),
@@ -54,7 +54,7 @@ export class StockResearchService {
 
     return from(stockSymbols)
     .pipe(
-      mergeMap((symbol: string) => this.getFinancialsForStock(symbol.trim(), annual)),
+      mergeMap((symbol: string) => this.getFinancialsPerStock(symbol.trim(), annual)),
       toArray(),
     ) ;
   }
