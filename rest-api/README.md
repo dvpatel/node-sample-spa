@@ -23,7 +23,8 @@ correlated to HTTP POST, GET, PUT and DELETE methods.
 StockResearch Service:
 
 The StockResearch service provides quarterly and annual financials for given 
-stock.  To retrieve quarterly financials in JSON format, access the URL http://localhost:3000/financials/<stock_symbol>.  To retrieve annualized 
+stock.  To retrieve quarterly financials in JSON format, access the 
+URL http://localhost:3000/financials/<stock_symbol>.  To retrieve annualized 
 financials data, access the same URL with the QueryParam 'annual=true'.
 
 ```
