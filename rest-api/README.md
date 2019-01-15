@@ -44,7 +44,7 @@ StockResearch Service:
 
 The StockResearch service provides quarterly and annual financials for a
 specific stock.  To retrieve quarterly financials in JSON format, access the 
-URL http://localhost:3000/financials/<stock_symbol>.  To retrieve annualized 
+URL http://localhost:3000/financials/<lowercase_stock_symbol>.  To retrieve annualized 
 financials, access the same URL with the QueryParam 'annual=true'.
 
 ```
