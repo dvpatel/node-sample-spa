@@ -10,7 +10,7 @@ export class HealthController {
    * ping.
    */
   @Get()
-  getHello(): string {
+  getStatus(): string {
     return 'up';
   }
 }
