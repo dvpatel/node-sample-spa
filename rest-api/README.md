@@ -32,8 +32,8 @@ REST GET requests that are safe and idempotent.
 The second service is a WatchList service based on randomly generated data 
 consisting of S&P 500 index stocks.  This service demonstrates all the 
 CRUD operations for creating, retrieving, updating and deleting a
- (fake) customer\'s wathlist.  The CRUD operations are directly correlated 
- to HTTP POST, GET, PUT and DELETE methods.
+(fake) customer's wathlist.  The CRUD operations are directly correlated 
+to HTTP POST, GET, PUT and DELETE methods.
 
 ```
 
@@ -54,11 +54,11 @@ financials, access the same URL with the QueryParam 'annual=true'.
 ```bash
 WatchList Service:
 
-The WatchList service provides CRUD operations for managing (fake) customer\'s 
+The WatchList service provides CRUD operations for managing (fake) customer's 
 watchlist.  On startup, the application will build 20 sample watchlists based on 
 randomized data points made up of S&P index stocks.
 
-To retrieve or GET ALL (fake) customer\'s watchlists, access URL:  http://localhost:3000/watchlist.
+To retrieve or GET ALL (fake) customer's watchlists, access URL:  http://localhost:3000/watchlist.
 
 To access specific watchlist, pass in watchlist id as part of the URL parameter.  
 ie.  http://localhost:3000/watchlist/1
