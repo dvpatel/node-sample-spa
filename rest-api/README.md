@@ -85,12 +85,13 @@ result in a new watchlist object which will be added to an internal watchlist ma
 data is not persisted.  On restart a new collection of watchlist will be created with
 randomized stocks data.
 
-Similary, to update an existing watchlist, use the PUT method and sumit JSON payload 
+Similary, to update an existing watchlist, use the PUT method and submit JSON payload 
 to the same end-point with a watchlist id parameter:  http://localhost:3000/watchlist/<watchlist_id>
 
 Lastly to delete a watchlist in the watchlist, use the DELETE method to the same 
-end-point with watchlist id as a parameter:  http://localhost:3000/watchlist/<watchlist_id>.  
-To delete a specific stock, include query parameter stockId:  http://localhost:3000/watchlist/1?stockId=10
+end-point with watchlist id as the parameter:  http://localhost:3000/watchlist/<watchlist_id>.  
+To delete a specific stock in a watchlist, include query parameter 
+stockId in the URL:  http://localhost:3000/watchlist/1?stockId=10
 
 ```
 
