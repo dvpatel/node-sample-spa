@@ -22,11 +22,11 @@ export class WatchListsComponent implements OnInit {
     @ViewChild('watchListSelect') watchListSelect;
     @ViewChild('stockSelect') stockSelect;
 
-    private watchLists: Array<WatchList>;
-    private stocks: Array<Stock>;
+    watchLists: Array<WatchList>;
+    stocks: Array<Stock>;
 
-    private deleteWatchListsDisabled: boolean;
-    private deleteStockDisabled: boolean;
+    deleteWatchListsDisabled: boolean;
+    deleteStockDisabled: boolean;
 
     private currentStockSymbol: string;
     private currentWatchListIndex: number;

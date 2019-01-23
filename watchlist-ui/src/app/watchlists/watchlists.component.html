@@ -1,7 +1,7 @@
 <div class='watchListsWrapper'>
 
   <div class='wlBox'>
-    <p>Watchlists:</p>
+    <b><u>Watchlists:</u></b>
     <mat-selection-list #watchListSelect (selectionChange)="onWatchListSelect($event)" placeholder="WatchList">
       <mat-list-option *ngFor="let watchList of watchLists" [value]="watchList.watchListId">
         {{watchList.name}}
@@ -11,7 +11,7 @@
 
 
   <div class='wlBox'>
-    <p>WatchList Stocks:</p>
+    <b><u>WatchList Stocks:</u></b>
     <mat-selection-list #stockSelect (selectionChange)="onStockSelected($event)" placeholder="WatchList Stocks">
       <mat-list-option *ngFor="let stock of stocks" [value]="stock.symbol">
         {{stock.companyName}} [ {{stock.symbol}} ]
@@ -20,7 +20,7 @@
   </div>
 
   <div class='wlBox'>
-    <p>Actions:</p>
+    <b><u>Actions:</u></b><p></p>
     <div>
       <button mat-stroked-button color="primary" (click)="deleteWatchList()" disabled="{{deleteWatchListsDisabled}}">Delete WatchList</button><p></p>
       <button mat-stroked-button color="primary" (click)="deleteStock()" disabled="{{deleteStockDisabled}}">Delete Stock</button>
