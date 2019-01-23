@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { Stock } from '../watchlist-service/stock.model';
-
 /**
- * Enable peer-to-peer communications
+ * Enable peer-to-peer communications between UI components
  */
 @Injectable()
 export class SimpleMessengerService {

@@ -35,6 +35,4 @@ export class StockResearchService {
     getAnnualFinancials(symbols: string[]): Observable<Financials[]> {
         return this.http.get<Financials[]>(environment.stockResearchServiceURL + 'annual?symbols=' + symbols.join(','));
     }
-
-
 }
