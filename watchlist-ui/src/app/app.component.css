@@ -1,0 +1,9 @@
+.wrapper1 {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 1;
+}
+
+.box1 {
+  padding: 20px;
+}

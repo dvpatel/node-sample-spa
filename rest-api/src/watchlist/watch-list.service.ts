@@ -158,7 +158,7 @@ export class WatchListService {
         const watchLists = this.sampleDataMap.get(customerId);
         const indx = watchLists.list.findIndex((item) => item.watchListId === watchListId);
 
-        if (indx && watchLists.list[indx]) {
+        if (watchLists.list[indx]) {
             const stocks = watchLists.list[indx].stocks;
             const stockIndx = stocks.findIndex((stock: Stock) => stock.stockId === stockId);
             if (stockIndx !== -1) {

@@ -106,6 +106,7 @@ export class WatchListController {
 
     //  Assume customerId = 1 ;  Can use AuthGuard to retrieve proper id AFTER security check.
     const customerId = 1;
+
     this.service.deleteWatchItem(customerId, watchListId, stockId)
       .subscribe(result => {
         response.status(HttpStatus.OK).send(this.successStatus('Successful item delete.'));
